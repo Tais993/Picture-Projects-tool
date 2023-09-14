@@ -22,11 +22,25 @@ public class Folder implements Container {
                 if (Files.isDirectory(path)) {
                     subFolders.put(path.getFileName().toString(), new Folder(path));
                 } else if (Files.isRegularFile(path)) {
+                    //TODO proper image filtering
                     images.put(path.getFileName().toString(), new Image(path));
                 }
             });
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+
+    public Path getFolderPath() {
+        return folderPath;
+    }
+
+    public Map<String, Image> getImages() {
+        return images;
+    }
+
+    public Map<String, Folder> getSubFolders() {
+        return subFolders;
     }
 }
