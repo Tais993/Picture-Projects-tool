@@ -3,13 +3,14 @@ package nl.tijsbeek.pictureprojectstool;
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.stage.Stage;
 import nl.tijsbeek.pictureprojectstool.entities.Project;
 
 import java.io.IOException;
-import java.nio.file.Path;
 
 public class ProjectControl extends GridPane {
     @FXML
@@ -33,6 +34,16 @@ public class ProjectControl extends GridPane {
 
         addEventFilter(MouseEvent.MOUSE_CLICKED, event -> {
 
+            ProjectView root = new ProjectView();
+            root.setProject(project);
+            root.reload();
+
+            Scene scene = new Scene(root, 320, 240);
+
+            Stage stage = new Stage();
+            stage.setTitle("Hello!");
+            stage.setScene(scene);
+            stage.show();
         });
     }
 
@@ -71,5 +82,10 @@ public class ProjectControl extends GridPane {
         return projectPath.textProperty();
     }
 
+    public void setProject(Project project) {
+        this.project = project;
+        setProjectPath(project.getProjectPath().toString());
+        setProjectName(project.getName());
+    }
 }
 

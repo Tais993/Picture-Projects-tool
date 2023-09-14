@@ -30,8 +30,8 @@ public class Projects extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
-        projectManager.addProject(new Project("Moon", Path.of("F:\\Backup important\\Pictures\\2023-8-16-Vakantie OG")));
-        projectManager.addProject(new Project("Vakantie", Path.of("F:\\Backup important\\Pictures\\2023-8-31-Moon")));
+        projectManager.addProject(new Project("Vakantie", Path.of("F:\\Backup important\\Pictures\\2023-8-16-Vakantie OG")));
+        projectManager.addProject(new Project("Moon", Path.of("F:\\Backup important\\Pictures\\2023-8-31-Moon")));
 
         Collection<Project> projects = projectManager.getProjects();
 
@@ -39,9 +39,7 @@ public class Projects extends AnchorPane {
                 .stream()
                 .map(project -> {
                     ProjectControl projectControl = new ProjectControl();
-                    projectControl.setProjectPath(project.getProjectPath().toString());
-                    projectControl.setProjectName(project.getName());
-
+                    projectControl.setProject(project);
                     return projectControl;
                 })
                 .toList();
