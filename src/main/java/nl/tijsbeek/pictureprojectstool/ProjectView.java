@@ -32,7 +32,7 @@ public class ProjectView extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
-        displayImage.setImage(imageByImagePath("F:\\Backup important\\Pictures\\2023-8-16-Vakantie OG\\Original\\_DSC9165.JPG"));
+        displayImage.setImage(imageByImagePath("D:\\Backup important\\Pictures\\2023-11-24-De Pul\\Original\\_DSC1109.jpg"));
         displayImage.setFitHeight(130);
 //        displayImage.setFitHeight(712);
         displayImage.setFitWidth(200);
@@ -40,7 +40,8 @@ public class ProjectView extends AnchorPane {
     }
 
     public javafx.scene.image.Image imageByImagePath(String imagePath) {
-        return new javafx.scene.image.Image(imagePath, 100, 0, true, false);
+        javafx.scene.image.Image image = new javafx.scene.image.Image(imagePath, 0, 400, true, false, false);
+        return image;
     }
 
     public javafx.scene.image.Image imageByImagePath(Path imagePath) {
@@ -64,11 +65,12 @@ public class ProjectView extends AnchorPane {
                 .filter(Image::isDisplayType)
                 .map(Image::getImagePath)
                 .map(this::imageByImagePath)
-                .map(ImageView::new)
-                .map(imageView -> {
-                    imageView.setFitHeight(80);
-                    imageView.setFitWidth(200);
-                    imageView.setStyle("""
+                .map(image -> {
+                    ImageView imageView = new ImageView(image);
+
+                    imageView.setFitWidth(image.getWidth());
+                    imageView.setFitHeight(image.getHeight());
+                    imageView.setStyle(""" 
                             -fx-padding: 50,50,50,50;
                             """);
 

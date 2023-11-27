@@ -30,8 +30,9 @@ public class Projects extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
-        projectManager.addProject(new Project("Vakantie", Path.of("F:\\Backup important\\Pictures\\2023-8-16-Vakantie OG")));
-        projectManager.addProject(new Project("Moon", Path.of("F:\\Backup important\\Pictures\\2023-8-31-Moon")));
+        projectManager.addProject(new Project("Vakantie", Path.of("D:\\Backup important\\Pictures\\2023-11-24-De Pul")));
+//        projectManager.addProject(new Project("Moon", Path.of("F:\\Backup important\\Pictures\\2023-8-31-Moon")));
+//        projectManager.addProject(new Project("Vakantie Vertical", Path.of("F:\\Backup important\\Pictures\\2023-8-16-Vakantie OG\\.12")));
 
         Collection<Project> projects = projectManager.getProjects();
 
