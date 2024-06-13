@@ -1,4 +1,4 @@
-package nl.tijsbeek.pictureprojectstool;
+package nl.tijsbeek.pictureprojectstool.javafx;
 
 import nl.tijsbeek.pictureprojectstool.entities.Project;
 

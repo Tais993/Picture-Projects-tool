@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<fx:root alignment="CENTER_LEFT" prefHeight="50" prefWidth="300" type="javafx.scene.layout.GridPane" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<GridPane alignment="CENTER_LEFT" onMouseClicked="#onMouseClick" prefHeight="50" prefWidth="300" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nl.tijsbeek.pictureprojectstool.javafx.ProjectControl">
    <Label fx:id="projectNameLabel" text="Label" textAlignment="CENTER" />
    <Label fx:id="projectPath" text="Label" textAlignment="CENTER" GridPane.columnIndex="1" />
    <columnConstraints>
@@ -14,4 +14,4 @@
    <rowConstraints>
       <RowConstraints />
    </rowConstraints>
-</fx:root>
+</GridPane>
