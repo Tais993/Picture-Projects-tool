@@ -64,6 +64,14 @@ public class ProjectView extends AnchorPane implements ImageEventListener {
     public void reload() {
         project.reload();
 
+        try {
+            ImageSupplier imageSupplier = project.getOriginalFolder().getImageSupplier();
+
+            imageSupplier.addFileEventListener(this);
+        } catch (IOException | InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
 //        imagesList.getChildren().addAll(project.getOriginalFolder().getImages()
 //                .values()
 //                .stream()
